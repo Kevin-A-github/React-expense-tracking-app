@@ -11,6 +11,7 @@ const NewExpense = props => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
+    // Close form is form is submitted.
     setIsEditing(false);
   };
 
@@ -24,9 +25,11 @@ const NewExpense = props => {
 
   return (
     <div className="new-expense">
+      {/* show button if we're NOT editing. */}
       {!isEditing && (
         <button onClick={startEditingHandler}>Add New Expense</button>
       )}
+      {/* If button is clicked show form */}
       {isEditing && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}

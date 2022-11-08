@@ -23,7 +23,7 @@ const ExpenseForm = props => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       // Constructing a new date, with the "new date" constructor which parses the string and convert it into a date object.
       date: new Date(enteredDate),
     };
@@ -67,6 +67,7 @@ const ExpenseForm = props => {
         </div>
       </div>
       <div className="new=expense__actions">
+        {/* Cancel the editing if we press "cancel" from NewExpense.JS */}
         <button type="button" onClick={props.onCancel}>
           Cancel
         </button>
